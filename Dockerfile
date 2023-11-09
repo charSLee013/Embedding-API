@@ -8,6 +8,8 @@ WORKDIR /app
 COPY . /app
 
 # Install required packages
+RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-deps sentence-transformers==2.2.2
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Define the healthcheck command
